@@ -4,7 +4,7 @@
 	--primary-color: rgb(0, 255, 204);
 	--secondary-color: rgb(195, 130, 9);
 	--wine: rgb(126, 8, 8);
-	--header-back: rgb(209, 160, 27);
+	--header-back: rgb(237, 219, 171);
 	--cannabis: rgb(21, 152, 21);
 }
 
@@ -47,21 +47,23 @@ nav ul li {
 nav ul li a {
 	color: var(--secondary-color);
 	text-decoration: none;
+	font-size: 1.2rem;
 }
 
 div.header {
 	height: 100%;
 	width: 100%;
-	background-color: var(--header-back);
+	background-color: rgba(214, 177, 76, 0.5);
 	clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
 }
 
 div.container.grid {
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	margin: 0 20px;
 	padding: 20px;
+	gap: 80px;
 }
 
 .grid {
@@ -71,6 +73,33 @@ div.container.grid {
 	justify-content: center;
 	align-items: center;
 	height: 100%;
+}
+
+div.card.left {
+	animation: slideInFromLeft 1s ease-in;
+}
+
+
+
+img {
+	width: 300px;
+	height: auto;
+	border-radius: 25px;
+	border:var(--wine) 2px solid;
+	margin-left: 30px;
+	animation: slideInFromRight 1s ease-in;
+}
+
+
+div.project-title {
+	background-color: var(--primary-color);
+	height: 60px;
+	text-align: center;
+}
+
+h2.section-title {
+	font-size: 2rem;
+	padding: 10px;
 }
 
 div.card {
@@ -87,11 +116,16 @@ div.container.flex {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	flex-wrap: wrap;
 }
 
 div.container.flex p{
 	margin: 0 20px;
 	padding: 20px;
+}
+
+div.container.flex .card {
+	flex-basis: 200px;
 }
 
 div.card.wine {	
@@ -210,5 +244,67 @@ a {
 
 i {
 	margin-right: 5px;
+}
+
+footer {
+	background-color: rgb(0, 255, 204, .5);
+
+}
+
+/* Animations */
+@keyframes slideInFromLeft {
+	0% {
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideInFromRight {
+	0% {
+		transform: translateX(100%);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+/* Media Queries */
+/*Tablet*/
+@media(max-width: 768px) {
+	div.container.grid {
+		grid-template-columns: 1fr;
+		height: auto;
+	}
+	div.card.left {
+		text-align: center;
+		margin-top: 40px;;
+	}
+
+	img.img-right {
+		justify-self: center;
+		margin: auto;
+	}
+}
+
+/*Mobile*/
+@media(max-width: 500px) {
+	.navbar {
+		height: 110px;
+	}
+	.navbar .flex {
+		flex-direction: column;
+	}
+	.navbar ul {
+		padding: 10px;
+		background-color:rgb(0, 255, 204, .1);
+	}
 }
 
