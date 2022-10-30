@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap');
 
 :root {
-	--primary-color: rgb(0, 255, 204);
+	--primary-color: rgb(242, 255, 0);
 	--secondary-color: rgb(195, 130, 9);
 	--wine: rgb(126, 8, 8);
 	--header-back: rgb(237, 219, 171);
@@ -16,239 +16,145 @@
 
 body {
 	font-family: 'Fuzzy Bubbles', cursive;
-	background-image: url(./images/diyahna-lewis-JEI-uPbp1Aw-unsplash.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+	color: var(--secondary-color);
+	line-height: 1.5;	
 }
 
+ul {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: var(--secondary-color);
+}
+
+h1,
+h2 {
+	margin: 10px 0;
+}
+
+p {
+	margin: 10px 0;
+}
+
+img {
+	width: 100%;
+}
+
+/*navbar*/
 .navbar {
 	height: 80px;
 	background-color: var(--primary-color);
 }
 
 .navbar .flex {
-	display:flex;
 	justify-content: space-between;
-	align-items: center;
-	margin: 0 10px;
-	height: 100%;
 }
 
-nav ul {
+.navbar ul {
 	display: flex;
-	list-style: none;
 }
 
-nav ul li {
-	margin: 0 10px;
-}
-
-nav ul li a {
+.navbar a {
 	color: var(--secondary-color);
-	text-decoration: none;
-	font-size: 1.2rem;
-}
-
-div.header {
-	height: 100%;
-	width: 100%;
-	background-color: rgba(214, 177, 76, 0.5);
-	clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-}
-
-div.container.grid {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0 20px;
-	padding: 20px;
-	gap: 80px;
-}
-
-.grid {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 20px;
-	justify-content: center;
-	align-items: center;
-	height: 100%;
-}
-
-div.card.left {
-	animation: slideInFromLeft 1s ease-in;
-}
-
-
-
-img {
-	width: 300px;
-	height: auto;
-	border-radius: 25px;
-	border:var(--wine) 2px solid;
-	margin-left: 30px;
-	animation: slideInFromRight 1s ease-in;
-}
-
-
-div.project-title {
-	background-color: var(--primary-color);
-	height: 60px;
-	text-align: center;
-}
-
-h2.section-title {
-	font-size: 2rem;
 	padding: 10px;
+	margin: 0 5px;
 }
 
-div.card {
-	background-color: white;
-	color: #333;
-	border-radius: 10px;
-	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	padding: 20px;
-	margin: 10px;
-	border:var(--wine) 2px solid;
+.navbar a:hover {
+	border-bottom: 2px white solid;
 }
 
-div.container.flex {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	flex-wrap: wrap;
-}
+/*info*/
 
-div.container.flex p{
-	margin: 0 20px;
-	padding: 20px;
-}
-
-div.container.flex .card {
-	flex-basis: 200px;
-}
-
-div.card.wine {	
+.info {
+	height:100%;
+	background-color: rgba(214, 177, 76, 0.8);
+	clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
 	position: relative;
-	isolation: isolate;
-	flex-grow: 1;
+	border-top: black 4px solid;
+	border-bottom: black 4px solid;
 }
 
-div.card.wine::after {
-	content: '';
-	position: absolute;
-	background: pink;
-	inset: 0;
-	z-index: -1;
-	opacity: 0.3;
-	background-image: url('./images/klara-kulikova-CPMZguYURMw-unsplash.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+.info-text {
+	justify-self: center;
 }
 
-div.card h1 {
-	color: var(--wine);
-	font-size: 2rem;
-	border-radius: 10px;
+.info-img {
+	height: 350px;
+	width: auto;
+	justify-self: center;
+	border-radius: 20px;
+	box-shadow: 0 5px 15px rgb(126, 8, 8, .5);
+	margin: 40px 0;
 }
 
-div.card.wine p {
-	margin: 10px 0;
-	color: var(--wine);
-	font-weight: bold;
-}
+/*projects*/
 
-div.card.cannabis {
-	position: relative;
-	isolation: isolate;
-	flex-grow: 1;
-}
-
-div.card.cannabis::after {
-	content: '';
-	position: absolute;
-	background: rgb(29, 119, 57);
-	inset: 0;
-	z-index: -1;
-	opacity: 0.3;	
-	background-image: url('./images/diyahna-lewis-JEI-uPbp1Aw-unsplash.jpg');
-	background-size: cover;
-	background-position: center;	
-	background-repeat: no-repeat;
-}
-
-div.card.sequelize {
-	position: relative;
-	isolation: isolate;
-	flex-grow: 1;
-}
-
-div.card.sequelize::after {
-	content: '';
-	position: absolute;
-	background: rgb(87, 235, 134);
-	inset: 0;
-	z-index: -1;
-	opacity: 0.3;	
-	background-image: url('./images/christina-rumpf-LMzwJDu6hTE-unsplash.jpg');
-	background-size: cover;
-	background-position: center;	
-	background-repeat: no-repeat;
-}
-
-div.card.cannabis h1 {
-	color: rgb(7, 57, 7);
-}
-
-div.card.cannabis p {
-	color: rgb(7, 57, 7);
-	font-weight: bold;
-}
-
-
-div.grid-line {
+.project-title {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	height: 3px;
+	grid-template-columns: 1fr 1fr;
+	background-color: var(--primary-color);
+	height: 100%;
 }
 
-div.grid-line .left{
-	border-bottom: var(--primary-color) solid 3px;
+.project-title h2 {
+	margin: 20px 20px;
+}
+
+
+
+
+/*footer*/
+
+footer {
+	background-color: rgb(0, 255, 204, .5);
+
+}
+
+/*Utilities*/
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	overflow: auto;
+	padding: 0 30px;
 }
 
 .btn {
 	display: inline-block;
-	padding: 10px 30px;
-	cursor: pointer;
 	background-color: var(--primary-color);
 	color: var(--secondary-color);
-	border: none;
+	cursor: pointer;
+	padding: 10px 20px;
 	border-radius: 500px;
-	margin: 10px 0;
 }
 
 .btn:hover {
 	background-color: var(--secondary-color);
 	color: var(--primary-color);
-	transform: scale(1.2)
+	transform: scale(.8)
 }
 
-a {
-	text-decoration: none;
-	font-weight: bold;
-	padding: 5px;
-	margin: 5px 0;
-	font-size: 1rem;
+.flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
 }
 
-i {
-	margin-right: 5px;
+.grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 30px;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
 }
 
-footer {
-	background-color: rgb(0, 255, 204, .5);
-
+.grid-3 {
+	grid-template-columns: repeat(3, 1fr);
 }
 
 /* Animations */
