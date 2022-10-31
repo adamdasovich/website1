@@ -1,11 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap');
 
 :root {
-	--primary-color: rgb(242, 255, 0);
+	--primary-color:rgb(0, 255, 204, 0.5);
 	--secondary-color: rgb(195, 130, 9);
 	--wine: rgb(126, 8, 8);
 	--header-back: rgb(237, 219, 171);
 	--cannabis: rgb(21, 152, 21);
+	--back-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+	--my-brown: rgb(149, 110, 21);
+	--footer-bg: rgb(0, 255, 204);
 }
 
 * {
@@ -15,7 +18,10 @@
 }
 
 body {
-	font-family: 'Fuzzy Bubbles', cursive;
+	font-family: 'Fuzzy Bubbles', cursive;background-size: cover;
+	background-image: linear-gradient(60deg, #abecd6 0%, #fbed96 100%);
+	background-position: center;	
+	background-repeat: no-repeat;
 	color: var(--secondary-color);
 	line-height: 1.5;	
 }
@@ -29,13 +35,23 @@ a {
 	color: var(--secondary-color);
 }
 
+i {
+	margin: 0 10px;
+}
+
 h1,
 h2 {
 	margin: 10px 0;
 }
 
+div.container.flex {
+	height: 100%;
+}
+
 p {
 	margin: 10px 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
 }
 
 img {
@@ -45,7 +61,9 @@ img {
 /*navbar*/
 .navbar {
 	height: 80px;
-	background-color: var(--primary-color);
+	background-color: var(--primary-color);	
+	border-top: black 4px solid;
+	border-bottom: black 4px solid;
 }
 
 .navbar .flex {
@@ -63,46 +81,125 @@ img {
 }
 
 .navbar a:hover {
-	border-bottom: 2px white solid;
+	border-bottom: 2px solid var(--secondary-color);
 }
 
 /*info*/
 
 .info {
 	height:100%;
-	background-color: rgba(214, 177, 76, 0.8);
+	background-image: url(./images/oct_31.jpg);
+	background-size: cover;
+	background-position: center;	
+	background-repeat: no-repeat;
 	clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
 	position: relative;
-	border-top: black 4px solid;
-	border-bottom: black 4px solid;
 }
 
 .info-text {
 	justify-self: center;
+	border: black 4px solid;
+	padding: 20px;
+	margin: 30px 20px;
+	border-radius: 15px;
+	background-image: var(--back-image);
+	animation: slideInFromLeft 1s ease-in;
+}
+	
+	
+
+.info-text p {
+	color: black;
+	font-weight: 300;
 }
 
 .info-img {
 	height: 350px;
 	width: auto;
 	justify-self: center;
-	border-radius: 20px;
-	box-shadow: 0 5px 15px rgb(126, 8, 8, .5);
-	margin: 40px 0;
+	border-radius: 200px;
+	box-shadow: 0 5px 15px rgba(9, 9, 9, 0.5);
+	margin: 40px 0;	
+	animation: slideInFromRight 1s ease-in;
 }
 
 /*projects*/
 
-.project-title {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	background-color: var(--primary-color);
-	height: 100%;
+div.card h1 {
+	background-image: var(--back-image);
+	padding: 10px;
+	border-radius: 10px;
 }
 
-.project-title h2 {
-	margin: 20px 20px;
+div.card p {
+	background-image: var(--back-image);
+	padding: 10px;
+	border-radius: 10px;
+	
 }
 
+div.card.wine {	
+	position: relative;
+	isolation: isolate;
+	color: var(--wine);
+	border: 4px solid var(--wine);
+	border-radius: 15px;
+}
+
+div.card.wine::after {
+	content: '';
+	position: absolute;
+	background: rgb(212, 189, 8);
+	inset: 0;
+	z-index: -1;
+	opacity: 0.5;
+	background-image: url('./images/klara-kulikova-CPMZguYURMw-unsplash.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+div.card.cannabis {
+	position: relative;
+	isolation: isolate;
+	color: green;
+	border: 4px solid green;
+	border-radius: 15px;
+}
+
+div.card.cannabis::after {
+	content: '';
+	position: absolute;
+	background: rgb(29, 119, 57);
+	inset: 0;
+	z-index: -1;
+	opacity: 0.3;	
+	background-image: url('./images/diyahna-lewis-JEI-uPbp1Aw-unsplash.jpg');
+	background-size: cover;
+	background-position: center;	
+	background-repeat: no-repeat;
+}
+
+div.card.sequelize {
+	position: relative;
+	isolation: isolate;	
+	color: var(--my-brown);
+	border: 4px solid var(--my-brown);
+	border-radius: 15px;
+}
+
+div.card.sequelize::after {
+	content: '';
+	position: absolute;
+	background: rgb(149, 110, 21);
+	inset: 0;
+	z-index: -1;
+	opacity: 0.3;	
+	background-image: url('./images/christina-rumpf-LMzwJDu6hTE-unsplash.jpg');
+	background-size: cover;
+	background-position: center;	
+	background-repeat: no-repeat;
+}
 
 
 
@@ -110,7 +207,11 @@ img {
 
 footer {
 	background-color: rgb(0, 255, 204, .5);
+}
 
+.social {
+	display: flex;
+	justify-content: space-between;
 }
 
 /*Utilities*/
@@ -118,17 +219,23 @@ footer {
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
-	overflow: auto;
 	padding: 0 30px;
+}
+
+.card {
+	padding: 20px;
+	margin: 20px 0;
 }
 
 .btn {
 	display: inline-block;
-	background-color: var(--primary-color);
+	background-image: var(--back-image);
 	color: var(--secondary-color);
 	cursor: pointer;
-	padding: 10px 20px;
+	padding: 5px 10px;
+	border: solid 2px var(--secondary-color);
 	border-radius: 500px;
+	margin: 5px;
 }
 
 .btn:hover {
@@ -185,16 +292,20 @@ footer {
 /* Media Queries */
 /*Tablet*/
 @media(max-width: 768px) {
-	div.container.grid {
+	.grid,
+	.projects .grid,
+	footer .grid {
 		grid-template-columns: 1fr;
 		height: auto;
 	}
-	div.card.left {
+
+
+	.info-text {
 		text-align: center;
 		margin-top: 40px;;
 	}
 
-	img.img-right {
+	.info-img {
 		justify-self: center;
 		margin: auto;
 	}
