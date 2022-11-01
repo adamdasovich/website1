@@ -7,7 +7,7 @@
 	--header-back: rgb(237, 219, 171);
 	--cannabis: rgb(21, 152, 21);
 	--back-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-	--my-brown: rgb(149, 110, 21);
+	--my-brown: rgb(102, 75, 13);
 	--footer-bg: rgb(0, 255, 204);
 }
 
@@ -126,8 +126,7 @@ img {
 /*projects*/
 
 div.card h1 {
-	background-image: var(--back-image);
-	padding: 10px;
+	font-weight: 700;
 	border-radius: 10px;
 }
 
@@ -146,10 +145,12 @@ div.card.wine {
 	border-radius: 15px;
 }
 
+
+
 div.card.wine::after {
 	content: '';
 	position: absolute;
-	background: rgb(212, 189, 8);
+	background: rgb(155, 5, 83);
 	inset: 0;
 	z-index: -1;
 	opacity: 0.5;
@@ -214,6 +215,54 @@ footer {
 	justify-content: space-between;
 }
 
+/*Wine App*/
+
+.project-wine {
+	background-image: var(--back-image);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+div.project-title {
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 30px;
+}
+
+.card-2 {
+	min-width: 120px;
+	display: flex;
+	flex-direction: column;
+	border: var(--cannabis) 1px solid;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 10px;
+	margin: 10px;
+	justify-self: center;
+	align-items: center;
+	border-radius: 10px;
+	background-image: var(--back-image);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+.card-2 h4 {
+	font-size: .6rem;
+	font-weight: 300;
+	margin: 10px 0;
+}
+
+img.tech-img {
+	width: 60px;
+	height: 60px;
+	align-self: center;
+}
+
+div.project-tech.flex {
+	flex-wrap: wrap;
+	justify-content: space-around;
+}
+
 /*Utilities*/
 
 .container {
@@ -240,7 +289,7 @@ footer {
 
 .btn:hover {
 	background-color: var(--secondary-color);
-	color: var(--primary-color);
+	color: var(--wine);
 	transform: scale(.8)
 }
 
