@@ -263,6 +263,16 @@ div.project-tech.flex {
 	justify-content: space-around;
 }
 
+.project-wine p {
+	font-size: 1rem;
+	font-weight: 300;
+	margin-bottom: 20px;
+}
+
+.project-wine ul {
+	list-style: circle; 
+}
+
 /*Utilities*/
 
 .container {
